@@ -8,12 +8,9 @@ public class CheckDigit
    public static int getCheck(int num) 
    {  
      int digits = 0;
-     int s = 7;
-     for(int i =1; i<=getNumberOfDigits(num);i++){
-       digits+=getNumberOfDigits(num)*s;
-       s--;
-     }
-     return getDigit(digits);
+     for(int i =1;i<=getNumberOfDigits(num);i++)
+       sum += (8-i) * getDigit(num, i);
+     return sum %10;
    }
  
   /** Returns true if numWithCheckDigit is valid, or false    
